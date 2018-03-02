@@ -6,7 +6,7 @@
 	<div id="chat-panel">
 		<table id="chat-controls">
 			<tr>
-				<td id="chat-settings-button">
+				<td id="chat-settings-button" onclick="toggleSettings()">
 				</td>
 
 				<td id="chat-message-field">

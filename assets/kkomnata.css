@@ -176,3 +176,86 @@ main
 	text-decoration: none;
 	color: #c0c0f0;
 }
+
+/* --------------------------- */
+
+#chat-settings-overlay
+{
+	position: fixed;
+	margin: 0; padding: 0;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(2, 2, 2, 0.9);
+	display: none;
+	z-index: 100;
+}
+
+#chat-settings
+{
+	width: 400px;
+	height: 150px;
+	margin-left: -200px;
+    margin-top: -75px; 
+	top: 50%;
+	left: 50%;
+
+	display: none;
+	position: fixed;
+	padding: 5px;
+	font-size: 12pt;
+
+	background: rgba(2, 2, 2, 0.9);
+
+	z-index: 101;
+}
+
+#settings-close
+{
+	font-size: 9pt;
+	margin: 0;
+	color: #020202;
+	text-align: right;
+	background: #c0c0c0;
+}
+
+#settings-close a
+{
+	color: #020202;
+}
+
+#chat-settings label
+{
+	cursor: pointer;
+}
+
+.settings-control
+{
+	margin-bottom: 5px;
+}
+
+#chat-settings input, #chat-settings select
+{	
+	color: #f5f5f5;
+	font-family: "Open Sans", "Jura", Verdana, Tahoma, Arial, Sans-Serif;
+	font-size: 11pt;
+}
+
+#chat-settings input[type=text], #chat-settings select
+{
+	border-bottom: 1px solid #505050;
+	background: rgba(2, 2, 2, 0.9);
+	border: none;
+	display: block;
+	padding: 4px;
+	-webkit-appearance: none;
+	outline: none;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#chat-settings select
+{
+	display: inline;
+	width: auto;
+}
