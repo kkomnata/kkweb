@@ -617,7 +617,6 @@ function saria_processMessage(message)
 	message = saria_sanitize(message);
 
 	// Special replacements
-	message = message.replace (/h3sot/gi, '<b>H<sub>3</sub>S&Ouml;T</b>');
 	message = message.replace (/\(c\)/gi, '&copy;');
 	message = message.replace (/\(r\)/gi, '&reg;');
 	message = message.replace (/\(tm\)/gi, '&trade;');
