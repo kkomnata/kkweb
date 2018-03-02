@@ -29,6 +29,11 @@ if (empty($route[0]))
 			require_once 'engine/api.php';
 			break;
 
+		case 'pp' :
+			$content = Array ('title' => 'Privacy Policy');
+			display ('pp', $content);
+			break;
+
 		default :
 			display404();
 		break;

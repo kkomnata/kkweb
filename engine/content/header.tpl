@@ -37,7 +37,7 @@
 </head>
 <body>
 	<div id="top">
-		<div id="logo">ККомната</div>
+		<div id="logo"><a href="https://<?php echo(BASE_DOMAIN); ?>">ККомната</a></div>
 		<div id="player">
 			<div id="player-control" class="player-paused" onclick="radioToggle()"></div>
 		</div>

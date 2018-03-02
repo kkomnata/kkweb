@@ -41,6 +41,11 @@ a
 	text-align: center;
 }
 
+#logo a
+{
+	text-decoration: none;
+}
+
 #top
 {
 	position: fixed;
