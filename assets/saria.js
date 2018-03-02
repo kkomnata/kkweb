@@ -827,7 +827,7 @@ function saria_getCommand (command)
 			saria_log('Name is accepted by the server :3');
 
 			var m = (fulltext) ? fulltext : 'незнакомец';
-			saria_sysmessage('* Добро пожаловать, '+m+'!', 'info');
+			saria_sysmessage('Добро пожаловать, '+m+'!', 'info');
 			break;
 			
 		case 'FAIL' :
@@ -849,7 +849,7 @@ function saria_getCommand (command)
 				default : messageClass = 'info';
 			}
 			
-			saria_sysmessage('* '+saria_sanitize(fulltext), messageClass, false);
+			saria_sysmessage(saria_sanitize(fulltext), messageClass, false);
 			
 			break;
 

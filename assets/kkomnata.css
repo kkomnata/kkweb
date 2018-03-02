@@ -141,8 +141,8 @@ main
 {
 	box-sizing: border-box;
 	padding: 1px;
-	border-left: 2px solid transparent;
-	padding-left: 2px;
+	border-left: 3px solid transparent;
+	padding-left: 4px;
 }
 
 #chat-text
@@ -176,6 +176,39 @@ main
 	text-decoration: none;
 	color: #c0c0f0;
 }
+
+.service-message
+{
+	box-sizing: border-box;
+	padding: 5px;
+	padding-left: 8px;
+	cursor: pointer;
+}
+
+.service-message.info
+{
+	border-left: 3px solid #d3fff8;
+	color: #d3fff8;
+}
+
+.service-message.warning
+{
+	border-left: 3px solid #fffbd3;
+	color: #fffbd3;
+}
+
+.service-message.error
+{
+	border-left: 3px solid #ffd3d3;
+	color: #ffd3d3;
+}
+
+.service-message.neutral
+{
+	border-left: 3px solid #f0f0f0;
+	color: #f0f0f0;
+}
+
 
 /* --------------------------- */
 
@@ -258,4 +291,13 @@ main
 {
 	display: inline;
 	width: auto;
+}
+
+/* ------------------------------ */
+@media handheld, only screen and (max-width: 800px)
+{
+	main, #player, #chat-panel
+	{
+		width: 100%;
+	}
 }
