@@ -325,7 +325,7 @@ function saria_error (code, message)
 			saria_disconnect();
 			break;
 		case 203 :
-			saria_sysmessage('Ник не может содержать никаких символов кроме латиницы и цифр.', 'warning');
+			saria_sysmessage('Ник не может содержать никаких символов кроме букв и цифр.', 'warning');
 			break;
 			
 		case 204 :
@@ -333,11 +333,11 @@ function saria_error (code, message)
 			break;
 			
 		case 205 :
-			saria_sysmessage('Упырь мел! Держи себя в руках, ковбой! Помедленнее!', 'warning');
+			saria_sysmessage('Сообщения посылаются слишком часто. Подождите.', 'warning');
 			break;
 
 		case 207 :
-			saria_sysmessage('Такой ник уже занят, возьми другой.', 'error');
+			saria_sysmessage('Такой ник уже занят.', 'error');
 			break;
 		
 		case 1000:
