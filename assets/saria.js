@@ -6,6 +6,14 @@
 	To get how it works, visit Airin project on GitHub:
 	https://github.com/asterleen/airin
 */
+
+/*
+
+	KKomnata Web Service
+	Made by Asterleen @ 2018
+	https://asterleen.com
+
+*/
 var
 	sariaSocket = null,
 	sariaStatus = null,

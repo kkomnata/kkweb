@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<!-- 
+
+	                   KKomnata Web Service
+	
+	  made by _____________________  __    _____________   __
+	   /   | / ___/_  __/ ____/ __ \/ /   / ____/ ____/ | / /
+	  / /| | \__ \ / / / __/ / /_/ / /   / __/ / __/ /  |/ / 
+	 / ___ |___/ // / / /___/ _, _/ /___/ /___/ /___/ /|  /  
+	/_/  |_/____//_/ /_____/_/ |_/_____/_____/_____/_/ |_/  
+	                https://asterleen.com
+
+	This project is open-source. See the source code
+	at https://github.com/kkomnata/kkweb
+
+-->
 <html>
 <head>
 	<meta charset="utf-8">

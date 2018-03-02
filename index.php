@@ -1,4 +1,12 @@
 <?php
+/*
+
+	KKomnata Web Service
+	Made by Asterleen @ 2018
+	https://asterleen.com
+
+*/
+
 require_once 'engine/enconfig.php';
 require_once 'engine/database.php';
 require_once 'engine/functions.php';
