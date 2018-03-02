@@ -385,7 +385,7 @@ function saria_resetStatus()
 		nowBlinking : false
 	};
 	
-	messagesQueue = [],
+	// messagesQueue = [],
 	commandsHistory = [];
 }
 
@@ -819,7 +819,9 @@ function saria_getCommand (command)
 			{
 				$('#chat-text').val('');
 				sariaStatus.nowSending = false;
-				addMyMessage(commands[2]);
+
+				if (commands[2] != 0) // it's not a user command
+					addMyMessage(commands[2]);
 			}
 			break;
 			
