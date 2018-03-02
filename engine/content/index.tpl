@@ -10,7 +10,7 @@
 				</td>
 
 				<td id="chat-message-field">
-					<textarea id="chat-text" placeholder="press enter"></textarea>
+					<textarea id="chat-text" placeholder="Enter — отправить сообщение"></textarea>
 				</td>
 
 				<td id="chat-unauthorized">
@@ -18,6 +18,29 @@
 				</td>
 			</tr>
 		</table>
+	</div>
+</div>
+
+<div id="chat-settings-overlay" onclick="toggleSettings()"></div>
+<div id="chat-settings">
+	<div id="settings-close">
+		[<a href="javascript:void(0)" onclick="toggleSettings()">закрыть</a>]
+	</div>
+	<div class="settings-control">
+		<input type="text" placeholder="Ник (только буквы и цифры)" id="username" name="username" autocomplete="off">
+	</div>
+	<!--
+	<div class="settings-control">
+		<label><input type="checkbox" id="play-sound" onchange="setSoundState(this)">Звук</label>
+	</div>
+	-->
+	<div class="settings-control">
+		Менять заголовок:
+		<select id="title-change-level" onchange="setTitleLevel(this)">
+			<option value="0">никогда</option>
+			<option value="1">если мне написали</option>
+			<option value="2">при любом сообщении</option>
+		</select>
 	</div>
 </div>
 

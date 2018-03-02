@@ -645,7 +645,7 @@ function saria_processMessage(message)
 			'<s>$1</s>', // s
 			'<sub>$1</sub>', // sub
 			'<sup>$1</sup>', // sup
-			'<a href="javascript:void(0)" class="chat-mention" onmouseover="highlightId(\'$1\', true);" onmouseout="highlightId(\'$1\', false);">&gt;&gt;$1</a>', // mention
+			'<a href="javascript:void(0)" class="chat-message-mention" onmouseover="highlightId(\'$1\', true);" onmouseout="highlightId(\'$1\', false);">&gt;&gt;$1</a>', // mention
 			'<a href="$1" title="$1" target="_blank">$2</a>', // url
 			'<span class="chat-quote">&gt;$1</span>', // quotation
 			'<span class="redline">$1</span>', // redline

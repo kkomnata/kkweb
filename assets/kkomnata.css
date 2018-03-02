@@ -100,6 +100,13 @@ main
 
 #chat-controls
 {
+	border-top: 1px solid #303030;
+	width: 100%;
+	height: 45px;
+}
+
+#chat-panel
+{
 	box-sizing: border-box;
 	height: 70px;
 	background: #020202;
@@ -107,7 +114,7 @@ main
 	padding: 5px;
 
 	position: fixed;
-    bottom: 0;
+	bottom: 0;
 }
 
 
@@ -116,9 +123,26 @@ main
 	text-align: center;
 }
 
-#chat-settings, #chat-message-field
+#chat-settings-button, #chat-message-field
 {
 	display: none;
+}
+
+#chat-settings-button
+{
+	width: 30px;
+	background: transparent url(settings.png) center no-repeat;
+	background-size: auto auto;
+	background-size: 25px 25px !important;
+	cursor: pointer;
+}
+
+.chat-message
+{
+	box-sizing: border-box;
+	padding: 1px;
+	border-left: 2px solid transparent;
+	padding-left: 2px;
 }
 
 #chat-text
@@ -127,7 +151,9 @@ main
 	border: 0;
 	font-family: "Open Sans", "Ubuntu", Tahoma, Verdana, Arial, Sans-Serif;
 	width: 100%;
+	height: 30px;
 	color: #f5f5f5;
+	resize: none;
 }
 
 .chat-message-time
@@ -138,4 +164,15 @@ main
 .chat-message-id
 {
 	color: #959595;
+}
+
+.chat-message-name
+{
+	cursor: pointer;
+}
+
+.chat-message-mention
+{
+	text-decoration: none;
+	color: #c0c0f0;
 }
