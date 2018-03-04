@@ -134,7 +134,8 @@ function radioPlay(channel)
 		
 		radioPlayer.play();
 		
-		$('#player-control').attr('class', 'player-running');
+		$('#player-control-paused').hide();
+		$('#player-control-playing').show();
 		
 		setVal('player_on', 1);
 	}
@@ -154,7 +155,8 @@ function radioStop()
 		// Make an object to be NULL to get radioToggle() correct work
 		radioPlayer = null;
 		
-		$('#player-control').attr('class', 'player-paused');
+		$('#player-control-playing').hide();
+		$('#player-control-paused').show();
 		setVal('player_on', 0);
 	}
 }

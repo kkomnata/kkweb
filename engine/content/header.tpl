@@ -39,7 +39,11 @@
 	<div id="top">
 		<div id="logo"><a href="https://<?php echo(BASE_DOMAIN); ?>">ККомната</a></div>
 		<div id="player">
-			<div id="player-control" class="player-paused" onclick="radioToggle()"></div>
+			<div id="player-control" onclick="radioToggle()">
+				<svg id="player-control-paused" class="player-control-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 183.93 210.54"><polygon points="2.5 4.31 2.5 206.23 178.9 105.27 2.5 4.31" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:5px"/></svg>
+
+				<svg id="player-control-playing" class="player-control-icon" viewBox="0 0 156.43 206.52"><path d="M2.5,204H53.22V2.5H2.5ZM103.21,2.5V204h50.72V2.5Z" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:5px"/></svg>
+			</div>
 		</div>
 	</div>
 
