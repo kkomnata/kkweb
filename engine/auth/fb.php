@@ -50,6 +50,8 @@ if (empty($json))
 						    Array('input_token'  => $json['access_token'],
 								  'access_token' => FB_CLIENT_ID.'|'.FB_CLIENT_SECRET));
 
+		$access_token = $json['access_token'];
+
 		$json = json_decode($res, true);
 		if (empty($json))
 		{
@@ -62,6 +64,15 @@ if (empty($json))
 			finish (2, sprintf('Authentication error: %s (code %s, type %s)', $json['error']['message'], $json['error']['code'], $json['error']['type']));	
 		}
 			else
-				processIncomingLogin('fb_'.(int)$json['data']['user_id']);
+			{
+				$res = curl_request('https://graph.facebook.com/me', 'get',
+									Array('access_token' => $access_token));
+				$uinfo = json_decode($res, true);
+
+				if (!empty($uinfo['error']))
+					finish (2, sprintf('Stage 2 auth error: %s (code %s, type %s)', $uinfo['error']['message'], $uinfo['error']['code'], $uinfo['error']['type']));
+				else
+					processIncomingLogin('fb_'.(int)$json['data']['user_id'], normalize_name($uinfo['name']));
+			}
 	}
 }

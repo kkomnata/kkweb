@@ -41,9 +41,20 @@ if (empty($json))
 	else
 if (!empty($json['error']))
 {
-	finish (2, sprintf('Authentication error: %s (%s)', $json['error'], $json['error_description']));	
+	finish (2, sprintf('Authentication error: %s (%s)', $json['error'], $json['error_description']));
 }
 	else
 {
-	processIncomingLogin('vk_'.(int)$json['user_id']);
+	$res = curl_request('https://api.vk.com/method/users.get', 'get',
+					     Array('user_ids' => $json['user_id']
+					     	   'v=' => VK_API_VERSION));
+
+	$uinfo = json_decode($res, true);
+
+	if (!empty($uinfo['error']))
+	{
+		finish (2, sprintf('Stage 2 auth error: %s (%s)', $uinfo['error'], $uinfo['error_description']));
+	}
+	else
+		processIncomingLogin('vk_'.(int)$json['user_id'], $uinfo['response'][0]['first_name']);
 }

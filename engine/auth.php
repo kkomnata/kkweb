@@ -18,31 +18,29 @@ function finish ($status, $payload = '')
 		die ('<h1>Failed to authorize: '.$payload.'</h1>');
 }
 
-function processIncomingLogin ($login)
+function processIncomingLogin ($login, $misc_info = '')
 {
 	$res = getToken($login);
+	$ntoken = '';
 	if (!empty($res['internal_token']))
 	{
-		$ntoken = '';
 		if ($res['active'])
-		{
 			$ntoken = $res['internal_token'];
-		}
 		else
 		{
 			$ntoken = mknonce();
 			updateToken ($login, $ntoken);
 			setTokenActive ($ntoken, true);
 		}
-		
-		finish(0, $ntoken);
 	}
 		else
 	{
 		$ntoken = mknonce();
 		addToken($ntoken, $login);
-		finish (0, $ntoken);
 	}
+
+	setUserMiscInfo ($login, $misc_info);
+	finish(0, $ntoken);
 }
 
 array_shift($route); // we're in /api/auth/ section

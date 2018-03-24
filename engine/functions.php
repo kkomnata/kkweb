@@ -23,6 +23,8 @@ function curl_request ($url, $type = 'get', $data = Array())
 {
 	$curl = curl_init();
 
+	error_log('Requesting '.$url.($type == 'get' ? '?'.http_build_query($data) : ''));
+
 	if($curl)
 	{
 		curl_setopt($curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
@@ -42,4 +44,9 @@ function curl_request ($url, $type = 'get', $data = Array())
 		return (empty ($out)) ? false : $out;
 	} else
 		return false;
+}
+
+function normalize_name($name)
+{
+	return preg_replace('/\s/', '_', $name);
 }

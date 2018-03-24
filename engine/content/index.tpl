@@ -67,14 +67,6 @@
 		[<a href="javascript:void(0)" onclick="toggleSettings()">закрыть</a>]
 	</div>
 	<div class="settings-control">
-		<input type="text" placeholder="Ник (только буквы и цифры)" id="username" name="username" autocomplete="off">
-	</div>
-	<!--
-	<div class="settings-control">
-		<label><input type="checkbox" id="play-sound" onchange="setSoundState(this)">Звук</label>
-	</div>
-	-->
-	<div class="settings-control">
 		Менять заголовок:
 		<select id="title-change-level" onchange="setTitleLevel(this)">
 			<option value="0">никогда</option>

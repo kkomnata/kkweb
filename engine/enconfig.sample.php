@@ -26,6 +26,7 @@ define ('DB_PASSWORD', 'hackme');
 define ('VK_CLIENT_ID', 31337);
 define ('VK_CLIENT_SECRET', '_top_secret_');
 define ('VK_REDIRECT_URI', 'https://'.BASE_DOMAIN.'/api/auth/vk');
+define ('VK_API_VERSION', '5.73');
 
 // Facebook Auth
 define ('FB_CLIENT_ID', 31337);

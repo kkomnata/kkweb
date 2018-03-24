@@ -29,11 +29,13 @@ var
 		userName               : '',
 		logCount               : 20,
 		messagesQueueLength    : 50,
-		defaultColor           : 'a0a0a0',
-		readonly               : false,
 		connectRetries         : 5,
 		messageSoundEnabled    : 1,
-		titleNotificationLevel : 1
+		titleNotificationLevel : 1,
+		readonly               : false,
+
+		// These params will be changed by core.js when color is changed
+		defaultColor           : 'a0a0a0',
 	},
 	
 	messagesQueue   = [],
@@ -138,11 +140,10 @@ function mentionId(id)
 
 function highlightId(id, active)
 {
-	var
-		color = (active) ? '#505050' :
-		(containsMyMessage($('#chat-content-'+id).text()) ? 'rgba(70, 70, 70, 0.35)' : 'transparent');
-		
-	$('#mesg-'+id).css({background:color});
+	if (active)
+		$('#mesg-'+id).addClass('highlighted');
+	else
+		$('#mesg-'+id).removeClass('highlighted');
 }
 
 function addMyMessage (id)
@@ -755,15 +756,11 @@ function saria_getCommand (command)
 			*/
 			
 			var
-				// color = (commands[4] !== 'NULL') ? commands[4] : sariaSettings.defaultColor,
 				color = sariaSettings.defaultColor,
-				isForMe = containsMyMessage(fulltext),
-				border = (isForMe) ? 'background: rgba(70, 70, 70, 0.35); border-left: 3px solid #'+sariaSettings.defaultColor : '';
+				isForMe = containsMyMessage(fulltext);
 			
-			var messageHtml = '<div class="chat-message" style="'+border+'" id="mesg-'+commands[1]+'"><span class="chat-message-time">'+time+'</span> <span class="chat-message-id" onclick="mentionId('+commands[1]+')">'+commands[1]+'</span> <span class="chat-message-name" style="color: #'+color+'" onclick="mentionId('+commands[1]+')">'+commands[3]+':</span> <span class="chat-message-content" id="chat-content-'+commands[1]+'">'+saria_processMessage(fulltext)+'</span></div>';
-
-
-			
+			var messageHtml = '<div class="chat-message'+(isForMe ? ' forme' : '')+'"" id="mesg-'+commands[1]+'"><span class="chat-message-time">'+time+'</span> <span class="chat-message-id" onclick="mentionId('+commands[1]+')">'+commands[1]+'</span> <span class="chat-message-name" style="color: #'+color+'" onclick="mentionId('+commands[1]+')">'+commands[3]+':</span> <span class="chat-message-content" id="chat-content-'+commands[1]+'">'+saria_processMessage(fulltext)+'</span></div>';
+	
 			
 			if (mainCmd == 'LOGCON')
 			{

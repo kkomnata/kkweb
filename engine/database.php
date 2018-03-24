@@ -36,6 +36,11 @@ function getUserLogin($itoken)
 	return ($res['cnt'] == 0) ? false : $res['user_id']; // use only strict comparsion! 
 }
 
+function setUserMiscInfo ($uid, $info)
+{
+	sqlQuery('UPDATE auth SET misc_info = ? WHERE user_id = ?', $info, $uid);
+}
+
 function isUserBanned ($login)
 {
 	$res = sqlQuery('SELECT ban_state from bans WHERE ban_login = ?', $login)->fetch();
