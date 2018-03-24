@@ -441,7 +441,6 @@ function saria_init(auth)
 				
 				if (commandsHistory.length > 0)
 				{
-					
 					if (sariaStatus.currentCommandPosition >= 0)
 					{
 						sariaStatus.currentCommandPosition--;
@@ -757,9 +756,18 @@ function saria_getCommand (command)
 			
 			var
 				color = sariaSettings.defaultColor,
-				isForMe = containsMyMessage(fulltext);
+				isForMe = containsMyMessage(fulltext),
+				idparts = commands[5].split('_'),
+				link = '';
+
+			switch (idparts[0])
+			{
+				case 'fb' : link = 'https://facebook.com/'+idparts[1]; break;
+				case 'vk' : link = 'https://vk.com/id'+idparts[1]; break;
+				default   : link = 'javascript:void(0)'; break;
+			}
 			
-			var messageHtml = '<div class="chat-message'+(isForMe ? ' forme' : '')+'"" id="mesg-'+commands[1]+'"><span class="chat-message-time">'+time+'</span> <span class="chat-message-id" onclick="mentionId('+commands[1]+')">'+commands[1]+'</span> <span class="chat-message-name" style="color: #'+color+'" onclick="mentionId('+commands[1]+')">'+commands[3]+':</span> <span class="chat-message-content" id="chat-content-'+commands[1]+'">'+saria_processMessage(fulltext)+'</span></div>';
+			var messageHtml = '<div class="chat-message'+(isForMe ? ' forme' : '')+'"" id="mesg-'+commands[1]+'"><span class="chat-message-time">'+time+'</span> <span class="chat-message-id" onclick="mentionId('+commands[1]+')">'+commands[1]+'</span> <a class="chat-message-name" style="color: #'+color+'" target="_blank" href="'+link+'">'+commands[3]+'</a>: <span class="chat-message-content" id="chat-content-'+commands[1]+'">'+saria_processMessage(fulltext)+'</span></div>';
 	
 			
 			if (mainCmd == 'LOGCON')

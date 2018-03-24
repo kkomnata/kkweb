@@ -196,7 +196,9 @@ main
 .chat-message-name
 {
 	cursor: pointer;
+	text-decoration: none;
 }
+
 
 .chat-message-mention
 {

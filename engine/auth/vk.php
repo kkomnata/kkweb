@@ -46,8 +46,8 @@ if (!empty($json['error']))
 	else
 {
 	$res = curl_request('https://api.vk.com/method/users.get', 'get',
-					     Array('user_ids' => $json['user_id']
-					     	   'v=' => VK_API_VERSION));
+					     Array('user_ids' => $json['user_id'],
+					     	   'v' => VK_API_VERSION));
 
 	$uinfo = json_decode($res, true);
 
